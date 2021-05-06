@@ -1,0 +1,23 @@
+<!-- <nav class="navigation">
+<ul class="menu">
+    <li class="menu_item">
+      <a routerLink="">
+        <span class="k-icon k-i-table"></span>
+      </a>
+    </li>
+    <li class="menu_item">
+      <a routerLink="/bookmark">
+        <span class="k-icon k-i-heart-outline"></span>
+      </a>
+    </li>
+  </ul>
+</nav> -->
+<nav class="navigation">
+  <kendo-menu [items]="items" [vertical]="true">
+    <ng-template kendoMenuItemLinkTemplate let-item="item" let-index="index">
+        <a [kendoMenuItemLink]="index" [routerLink]="item.path">
+            <span *ngIf="item.icon" class="k-icon {{item.icon}}"></span>
+        </a>
+    </ng-template>
+</kendo-menu>
+</nav>

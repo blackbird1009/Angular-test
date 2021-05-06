@@ -1,0 +1,18 @@
+<div class="tilelayout-wrapper">
+  <p class="defaultText" *ngIf="images.length == 0">No images here. Would you try to search ?</p>
+  <div *ngIf="parentComponent == 'Search'">
+    <pagination-controls *ngIf="images.length > 0" (pageChange)="p = $event"></pagination-controls>
+    <kendo-tilelayout [columns]="3" [rowHeight]="400" [reorderable]="true" [resizable]="true">
+      <kendo-tilelayout-item *ngFor="let image of images | paginate: { itemsPerPage: 12, currentPage: p }; index as i" [col]="(i%3)+1">
+        <app-foto-item [image]='image'></app-foto-item>
+      </kendo-tilelayout-item>
+    </kendo-tilelayout>
+  </div>
+  <div *ngIf="parentComponent == 'Bookmark'">
+    <kendo-tilelayout [columns]="3" [rowHeight]="400" [reorderable]="true" [resizable]="true">
+      <kendo-tilelayout-item *ngFor="let image of images; index as i" [col]="(i%3)+1">
+        <app-foto-item-book (deleted)="onDelete($event)" [image]='image'></app-foto-item-book>
+      </kendo-tilelayout-item>
+    </kendo-tilelayout>
+  </div>
+</div>

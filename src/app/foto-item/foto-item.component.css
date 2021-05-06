@@ -1,0 +1,22 @@
+.k-hbox{
+    display: flex;
+    justify-content: center;
+    max-height: 290px;
+    padding: 0px;
+}
+
+.k-hbox img{
+    object-fit: contain;
+    height: inherit;
+}
+
+kendo-card.imageBox{
+    border: 1px solid black;
+}
+
+
+.button{
+    font-size: 16px;
+    padding: 5px;
+    margin-bottom: 10px;
+}

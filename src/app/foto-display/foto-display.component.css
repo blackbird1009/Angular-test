@@ -1,0 +1,12 @@
+.tilelayout-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 30px;
+    max-height: calc(100vh - 300px);
+    overflow-y: auto;
+}
+
+kendo-tilelayout-item{
+    justify-content: center !important;
+}

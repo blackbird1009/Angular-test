@@ -1,0 +1,9 @@
+<kendo-card [width]="'100%'" class="imageBox">
+  <kendo-card-header class="k-hbox">
+    <img src="{{image['url']}}">
+  </kendo-card-header>
+  <kendo-card-body>
+    <button kendoButton type="button" class="button image-save" (click)="saveItem($event)" look="outline">Bookmark me!</button><br>
+    <kendo-textbox class='tagField' (change)="saveTag($event)" placeholder="Add some tag" [clearButton]="true"></kendo-textbox>
+  </kendo-card-body>
+</kendo-card>
